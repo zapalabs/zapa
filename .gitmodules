@@ -1,0 +1,12 @@
+[submodule "ava-sim"]
+	path = ava-sim
+	url = git@github.com:rkass/ava-sim.git
+[submodule "zcashvm"]
+	path = zcashvm
+	url = git@github.com:rkass/zcashvm.git
+[submodule "zcash"]
+	path = zcash
+	url = git@github.com:rkass/zcash.git
+[submodule "avalanchego"]
+	path = avalanchego
+	url = git@github.com:ava-labs/avalanchego.git
