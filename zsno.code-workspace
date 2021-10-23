@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "ava-sim"
+		},
+		{
+			"path": "avalanchego"
+		},
+		{
+			"path": "zcash"
+		},
+		{
+			"path": "zcashvm"
+		}
+	],
+	"settings": {}
+}
