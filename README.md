@@ -7,9 +7,11 @@ This repo specifically is meant to make developing and debugging this project wi
 - Build and debug the official zcash node and cli.
 - Build and debug the WIP zcashvm which is an avalanche virtual machine. 
 
-After cloning, be sure to fetch submodules:
+After cloning, fetch submodules:
 
 `git submodule update --init --recursive`
+
+Open in VS Code by selecting "Open Workspace from file", then `zsno.code-workspace`.
 
 ## Building and debugging zcash
 
