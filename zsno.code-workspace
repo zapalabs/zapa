@@ -11,9 +11,6 @@
 		},
 		{
 			"path": "zcashvm"
-		},
-		{
-			"path": "timestampvm2"
 		}
 	],
 	"settings": {
