@@ -72,21 +72,25 @@ DISABLE_POW=true HOME=/path/to/urhome zcash/src/zcashd -datadir="/path/to/Zcash0
 
 ```
 cp -r /path/to/Zcash0/regtest/blocks/ /path/to/Zcash1/regtest/blocks && DISABLE_POW=true HOME=/path/to/urhome zcash/src/zcashd -datadir="/path/to/Zcash1/" -port="18251" -reindex
+```
 
 *Instance 2*:
 
 ```
 cp -r /path/to/Zcash0/regtest/blocks/ /path/to/Zcash2/regtest/blocks && DISABLE_POW=true HOME=/path/to/urhome zcash/src/zcashd -datadir="/path/to/Zcash2/" -port="18252" -reindex
+```
 
 *Instance 3*:
 
 ```
 cp -r /path/to/Zcash0/regtest/blocks/ /path/to/Zcash3/regtest/blocks && DISABLE_POW=true HOME=/path/to/urhome zcash/src/zcashd -datadir="/path/to/Zcash3/" -port="18253" -reindex
+```
 
 *Instance 4*:
 
 ```
 cp -r /path/to/Zcash0/regtest/blocks/ /path/to/Zcash4/regtest/blocks && DISABLE_POW=true HOME=/path/to/urhome zcash/src/zcashd -datadir="/path/to/Zcash3/" -port="18254" -reindex
+```
 
 Before starting each instance, the blockchain files of each node must be syncd. Once zsno is running, all nodes are kept in sync by the coordinating zcashvm, however each node must start from a common place. This will be changed in the future so that a node can be brought up from a fresh state into a mature chain and download the entire block history. 
 
