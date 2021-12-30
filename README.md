@@ -14,7 +14,7 @@ After cloning, fetch submodules:
 
 `git submodule update --init --recursive`
 
-Throughout this project there are optional directives for debugging in VS Code. Contained in this repo is a pre-configured VS Code workspace. To open this project in VS Code, open VS Code and select "Open Workspace from file", then select `zsno.code-workspace` from this repos' main directory.
+Throughout this project there are optional directives for debugging in VS Code. Contained in this repo is a pre-configured VS Code workspace. To open this project in VS Code, open VS Code and select "Open Workspace from file", then select `zsno.code-workspace` from this repo's main directory.
 
 ## Interacting with the zcashvm API
 
