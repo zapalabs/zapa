@@ -16,6 +16,16 @@ After cloning, fetch submodules:
 
 Throughout this project there are optional directives for debugging in VS Code. Contained in this repo is a pre-configured VS Code workspace. To open this project in VS Code, open VS Code and select "Open Workspace from file", then select `zsno.code-workspace` from this repos' main directory.
 
+## Interacting with the zcashvm API
+
+### Overview
+
+Three API methods are provided by the zcashvm: 
+
+1. `zcashrpc` is a generalized method for sending an rpc to zcashd and returning its response. For all methods available see https://zcash-rpc.github.io/ for all methods exposed by vanilla zcash as well as https://github.com/rkass/zcash/blob/zsno-release/doc/zsno.md for additional methods exposed by the custom zcashd that zsno runs with.
+2. `submittx` is a specialized method for submitting a transaction. This could technically be accomplished with `zcashrpc`, but a separate method is exposed for clarity of inputs.
+3. `localnodestartup` only used locally. See 
+
 ## Run it locally
 
 The below instructions will allow you to run 5 local zsno nodes all validating the same chain, which is initialized on a local subnet of the local Avalanche network. See [ava-sim](https://github.com/rkass/ava-sim) for more details on the local environment.
