@@ -8,5 +8,5 @@
 	path = avalanchego
 	url = git@github.com:ava-labs/avalanchego.git
 [submodule "timestampvm2"]
-	path = timestampvm2
+	path = zcashvm
 	url = git@github.com:rkass/timestampvm2.git
