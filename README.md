@@ -24,7 +24,175 @@ Three API methods are provided by the zcashvm:
 
 1. `zcashrpc` is a generalized method for sending an rpc to zcashd and returning its response. For all methods available see https://zcash-rpc.github.io/ for all methods exposed by vanilla zcash as well as https://github.com/rkass/zcash/blob/zsno-release/doc/zsno.md for additional methods exposed by the custom zcashd that zsno runs with.
 2. `submittx` is a specialized method for submitting a transaction. This could technically be accomplished with `zcashrpc`, but a separate method is exposed for clarity of inputs.
-3. `localnodestartup` only used locally. See 
+3. `localnodestartup` only used locally. See https://github.com/rkass/zsno/blob/master/README.md#5-post-launch
+
+### Examples
+
+All hosts below need to be replaced with the host you're using.
+
+#### listunspent
+
+Lists unspent utxos for the wallet of the given node.
+
+##### Request
+
+```
+curl --location --request POST 'http://127.0.0.1:9650/ext/bc/2LG588Xat1PZYtf3LhMx4upBSM7yucVb2EmkiNqeiUkNVLQ7Qb' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "zcashvm.zcashrpc",
+    "params":{
+        "params":[],
+        "Method":"listunspent",
+        "ID": "fromavax"
+    },
+    "id": 1
+}
+'
+```
+
+##### Response
+
+```
+{
+	"jsonrpc": "2.0",
+	"result": {
+		"Result": [{
+				"txid": "a774565e0eab2ab1f7e148625051198d9fdce586c20a71b2cc9a5fa96adec304",
+				"vout": 0,
+				"generated": true,
+				"address": "tmRe7AUNTHdCjAavKzkKux1ZNUWWQUgxrjE",
+				"scriptPubKey": "76a914aeb485c202ea7b504dcfe648dce458d949a95b7888ac",
+				"amount": 10.00000000,
+				"amountZat": 1000000000,
+				"confirmations": 119,
+				"spendable": true
+			},
+			{
+				"txid": "5cead91f3cf597d16bb0ad24f0355eecf49d65aab841c49bff40b712d9c3c408",
+				"vout": 0,
+				"generated": true,
+				"address": "tmRe7AUNTHdCjAavKzkKux1ZNUWWQUgxrjE",
+				"scriptPubKey": "76a914aeb485c202ea7b504dcfe648dce458d949a95b7888ac",
+				"amount": 10.00000000,
+				"amountZat": 1000000000,
+				"confirmations": 179,
+				"spendable": true
+			}
+		],
+		"error": "",
+		"id": "fromgo"
+	},
+	"id": 1
+}
+```
+
+#### z_getnewaddress
+
+Now we'd like to shield some coins so that they are held in a private address. First thing we must do is obtain a private address.
+
+##### Request
+
+```
+curl --location --request POST 'http://127.0.0.1:9650/ext/bc/2LG588Xat1PZYtf3LhMx4upBSM7yucVb2EmkiNqeiUkNVLQ7Qb' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "zcashvm.zcashrpc",
+    "params":{
+        "params":[],
+        "Method":"z_getnewaddress",
+        "ID": "fromavax"
+    },
+    "id": 1
+}
+'
+```
+
+##### Response
+
+```
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "Result": "zregtestsapling1r62wjyz84w2ndevd48l0ca5uwwrtx993fv2n9s2evmul58lkghl6ylzjsguhu6zzkdm22ke2wxt",
+        "error": "",
+        "id": "fromgo"
+    },
+    "id": 1
+}
+```
+
+#### submittx
+
+Now let's shield some funds by sending a transaction from a t-address from one of our utxos above to the z address output directly above.
+
+##### Request
+
+```
+curl --location --request POST 'http://127.0.0.1:9650/ext/bc/2LG588Xat1PZYtf3LhMx4upBSM7yucVb2EmkiNqeiUkNVLQ7Qb' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "zcashvm.submitTx",
+    "params":{
+        "from":"tmRe7AUNTHdCjAavKzkKux1ZNUWWQUgxrjE",
+        "to":"zregtestsapling1r62wjyz84w2ndevd48l0ca5uwwrtx993fv2n9s2evmul58lkghl6ylzjsguhu6zzkdm22ke2wxt",
+        "amount": 0.1
+    },
+    "id": 1
+}
+'
+```
+
+##### Response 
+
+```
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "SubmittedTx": "WzQsMCw...=="
+    },
+    "id": 1
+}
+```
+
+#### z_getbalance
+
+Let's check the balance of the address we just sent coins to to make sure they got there.
+
+##### Request
+
+```
+curl --location --request POST 'http://127.0.0.1:9650/ext/bc/2LG588Xat1PZYtf3LhMx4upBSM7yucVb2EmkiNqeiUkNVLQ7Qb' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "zcashvm.zcashrpc",
+    "params":{
+        "params":["zregtestsapling1r62wjyz84w2ndevd48l0ca5uwwrtx993fv2n9s2evmul58lkghl6ylzjsguhu6zzkdm22ke2wxt"],
+        "Method":"z_getbalance",
+        "ID": "fromavax"
+    },
+    "id": 1
+}
+'
+```
+
+##### Response
+
+```
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "Result": 0.100000,
+        "error": "",
+        "id": "fromgo"
+    },
+    "id": 1
+}
+```
 
 ## Run it locally
 
@@ -158,3 +326,5 @@ curl --location --request POST 'http://127.0.0.1:9650/ext/bc/24nwKwXReCpoGxKSPFJ
 ```
 tail -f zcashvm/logs/log
 ```
+
+It can be particularly necessary to look at the logs to understand which zcashvm is associated with which zcashd, especially when only some zcashds have funds. That is, in order to start sending transactions the first time you start up the network, you'll need to do so from zcashd instance 0, since that is the only wallet which has funds. After you interact with the chain and send transactions, other nodes will receive coinbase rewards, but instance 0 is the only one with funds to start. This will of course be addressed in future iterations.
