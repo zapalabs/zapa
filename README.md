@@ -18,6 +18,8 @@ Throughout this project there are optional directives for debugging in VS Code. 
 
 ## Interacting with the zcashvm API
 
+If you'd like to interact with a local zcashvm, see the [Run it Locally](https://github.com/rkass/zsno/blob/master/README.md#run-it-locally) section first.
+
 ### Overview
 
 Three API methods are provided by the zcashvm: 
