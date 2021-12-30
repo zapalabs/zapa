@@ -10,3 +10,6 @@
 [submodule "avalanchego"]
 	path = avalanchego
 	url = git@github.com:ava-labs/avalanchego.git
+[submodule "timestampvm2"]
+	path = timestampvm2
+	url = git@github.com:rkass/timestampvm2.git
