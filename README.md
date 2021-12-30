@@ -218,7 +218,9 @@ Inside each of the above directories, initialize a file called `zcash.conf`. The
 
 #### Run 5 different zcash instances
 
-- Before starting the first instance, remove any existing blockchain files so we're starting fresh. Bringing up a node from existing state is possible however if that state is too stale (more than a day), zcash complains that the chain is stale as it expects blocks to be produced at a somewhat continuous rate. To do this run the following (note that if this is your first run from Zcash0 as your config directory this isn't necessary):
+Before starting each instance, the blockchain files of each node must be syncd. Once zsno is running, all nodes are kept in sync by the coordinating zcashvm, however each node must start from a common place. This will be changed in the future so that a node can be brought up from a fresh state into a mature chain and download the entire block history. 
+
+- First, remove any existing blockchain files so we're starting fresh. Bringing up a node from existing state is possible however if that state is too stale (more than a day), zcash complains that the chain is stale as it expects blocks to be produced at a somewhat continuous rate. To remove the block files, run the following (note that if this is your first run from Zcash0 as your config directory this isn't necessary):
 
 ```
 rm -rf Zcash0/regtest/
@@ -271,8 +273,6 @@ cp -r /path/to/Zcash0/regtest/blocks/ /path/to/Zcash3/regtest/blocks && DISABLE_
 ```
 cp -r /path/to/Zcash0/regtest/blocks/ /path/to/Zcash4/regtest/blocks && DISABLE_POW=true HOME=/path/to/urhome zcash/src/zcashd -datadir="/path/to/Zcash3/" -port="18254" -reindex
 ```
-
-Before starting each instance, the blockchain files of each node must be syncd. Once zsno is running, all nodes are kept in sync by the coordinating zcashvm, however each node must start from a common place. This will be changed in the future so that a node can be brought up from a fresh state into a mature chain and download the entire block history. 
 
 ### 3. Build zcashvm
 
