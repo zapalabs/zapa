@@ -1,6 +1,6 @@
-# zsno
+# Zapa
 
-zsno is a project for integrating a zcash virtual machine into a custom Avalanche subnet. This repo contains all dependencies needed to develop, debug, deploy, and/or become a validator on zsno.
+Zapa stands for Zero Knowledge Anonymous Payments on Avalanche. Zapa is a project for integrating a zcash virtual machine into a custom Avalanche subnet. This repo contains all dependencies needed to develop, debug, deploy, and/or become a validator on zsno.
 
 ## Status
 
