@@ -7,6 +7,6 @@
 [submodule "avalanchego"]
 	path = avalanchego
 	url = git@github.com:ava-labs/avalanchego.git
-[submodule "timestampvm2"]
+[submodule "zapavm"]
 	path = zapavm
-	url = git@github.com:zapalabs/timestampvm2.git
+	url = git@github.com:zapalabs/zapavm.git
