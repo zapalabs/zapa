@@ -201,7 +201,7 @@ curl --location --request POST 'http://127.0.0.1:9650/ext/bc/2LG588Xat1PZYtf3LhM
 The below instructions will allow you to run 5 local zsno nodes all validating the same chain, which is initialized on a local subnet of the local Avalanche network. See [ava-sim](https://github.com/rkass/ava-sim) for more details on the local environment.
 
 ### 1. Build and Run zcash
-Complete the the tutorial for running zcash: [zcash/docs/debugging.md](zcash/docs/debugging.md). Ability to debug zcash is optional.
+Complete the the tutorial for running zcash: [zcash/docs/debugging.md](https://github.com/zapalabs/zcash/blob/ed38d4967386e44c2eb0a261be716eb4a6dde93c/doc/debugging.md). Ability to debug zcash is optional.
 ### 2. Run Many zcashes
 Shut down any running zcash instances and configure 5 different configuration directories. These directories will hold your zcash.conf, blockchain details (serialized blocks), as well as wallet details. Each zcash instance will have a different wallet associated with it, slightly different configuration, and the same blockchain details.
 
