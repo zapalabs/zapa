@@ -82,4 +82,16 @@ To validate the Zapa chain and start earning ZAPA on the fuji network:
 
 ### Step 3: Interact with the chain
 
-- See [Interacting with the Chain](https://github.com/zapalabs/ava-sim/blob/master/README.md#interacting-with-the-chain) for instructions on how to interact with the blockchain. Copy the blockchain ID specified [above](#fuji-deployment-information). In case you're looking for inspiraton, you can call [MineBlock](https://github.com/zapalabs/zapavm#zapavmmineblock) to ask your node to produce a block. You can then call [NodeBlockCounts](https://github.com/zapalabs/zapavm/blob/main/README.md#zapavmnodeblockcounts) to verify that your node has indeed produced a block. If your node has successfully produced a block, you should also have some coinbase rewards. Call [ListSpent](https://github.com/zapalabs/zapavm#example-list-unspent) to see your balances. Then, try sending some funds around...privately, of course. First call [z_getnewaddress](https://github.com/zapalabs/zapavm/blob/main/README.md#example-z_getnewaddress) to get a shielded address. Then call [SubmitTx](https://github.com/zapalabs/zapavm/blob/main/README.md#zapavmsubmittx) in order to send some ZAPA from one of your unspent addresses to this new shielded address. You can then verify the coinas got there by calling [z_getbalance](https://github.com/zapalabs/zapavm/blob/main/README.md#example-z_getbalance). Once you've verified that you can shield funds, try then sending ZAPA to someone else's z-address. Any transactions between z-addresses are 100% private.
+- See [Interacting with the Chain](https://github.com/zapalabs/ava-sim/blob/master/README.md#interacting-with-the-chain) for instructions on how to interact with the blockchain. 
+- Copy the blockchain ID specified [above](#fuji-deployment-information). 
+
+#### Inspiration
+
+In case you're looking for inspiraton:
+1. Call [MineBlock](https://github.com/zapalabs/zapavm#zapavmmineblock) to ask your node to produce a block. 
+2. Call [NodeBlockCounts](https://github.com/zapalabs/zapavm/blob/main/README.md#zapavmnodeblockcounts) to verify that your node has indeed produced a block. If your node has successfully produced a block, you should also have some coinbase rewards. If not, return to step 1. Sometimes this takes a few tries. 
+3. Call [ListSpent](https://github.com/zapalabs/zapavm#example-list-unspent) to see your balances. 
+4. Then, try sending some funds around...privately, of course. Call [z_getnewaddress](https://github.com/zapalabs/zapavm/blob/main/README.md#example-z_getnewaddress) to get a shielded address. 
+5. Then call [SubmitTx](https://github.com/zapalabs/zapavm/blob/main/README.md#zapavmsubmittx) in order to send some ZAPA from one of your unspent addresses to this new shielded address. 
+6. You can then verify the coinas got there by calling [z_getbalance](https://github.com/zapalabs/zapavm/blob/main/README.md#example-z_getbalance). 
+7. Once you've verified that you can shield funds, try then sending ZAPA to someone else's z-address. Any transactions between z-addresses are 100% private.
