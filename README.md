@@ -11,8 +11,11 @@ Zapa is **Z**ero-Knowledge **A**nonymous **P**ayments on **A**valanche -- a priv
 ## Fuji Deployment Information
 
 Subnet ID: `2ma1j6rSYPykvTDk6JeHKGgXQzqtWbwrsEzUethnTf8k7DMSEb`
+
 VM ID: `tGas3T58KzdjLHhBDMnH2TvrddhqTji5iZAMZ3RXs2NLpSnhH`
+
 Active Blockchain ID: `6Jdeqk1VMB3qXhse3C3YnuoZPnaNAqGJJucyRSkXmpiekrEto`
+
 Disabled Blockchain IDs: `ydwMTPrYBWHrGVmWfG8k4Po2eTPEqe7y7Z4jZaUr2Me6rin7, 2LedqoeDb3zZQSqPBczemzrofepr6SzSHXxHXANrfzeFKGGNVd`
 
 ## Setup
