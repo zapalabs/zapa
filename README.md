@@ -63,7 +63,7 @@ See [Interacting with the Chain](https://github.com/zapalabs/ava-sim/blob/master
 To validate the Zapa chain and start earning ZAPA on the fuji network:
 
 1. Run a zcash node
-2. Launch the zapavm plugin
+2. Launch the zapavm plugin ontop of an existing avalanchego fuji deployment.
 
 ### Step 1: Run zcashd
 
@@ -73,7 +73,7 @@ To validate the Zapa chain and start earning ZAPA on the fuji network:
 
 ### Step 2: Launch the zapavm plugin
 
-- Ensure you have an `avalanchego` node pointed at the Fuji network.
+- Ensure you have an `avalanchego` node pointed at the Fuji network. See [Avalanche Docs](https://docs.avax.network/build/tutorials/nodes-and-staking/set-up-node-with-installer/)
 - Either follow instructions to [build zapavm](https://github.com/zapalabs/zapavm#building) from source or use a [pre-existing build](https://github.com/zapalabs/zapavm#builds). 
 - Move the plugin binary to your plugins directory, usually found at `build/plugins/` relative to your `avalanchego` program
 - Update your node configuration to whitelist the subnet specified [above](#fuji-deployment-information).
