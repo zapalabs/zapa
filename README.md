@@ -16,7 +16,7 @@ VM ID: `tGas3T58KzdjLHhBDMnH2TvrddhqTji5iZAMZ3RXs2NLpSnhH`
 
 Active Blockchain ID: `6Jdeqk1VMB3qXhse3C3YnuoZPnaNAqGJJucyRSkXmpiekrEto`
 
-Disabled Blockchain IDs: `ydwMTPrYBWHrGVmWfG8k4Po2eTPEqe7y7Z4jZaUr2Me6rin7, 2LedqoeDb3zZQSqPBczemzrofepr6SzSHXxHXANrfzeFKGGNVd`
+Disabled Blockchain IDs: `ydwMTPrYBWHrGVmWfG8k4Po2eTPEqe7y7Z4jZaUr2Me6rin7`, `2LedqoeDb3zZQSqPBczemzrofepr6SzSHXxHXANrfzeFKGGNVd`
 
 ## Setup
 
@@ -40,7 +40,7 @@ The fourth submodule (not depicted above) is [ava-sim](https://github.com/zapala
 
 ## Local Setup
 
-The best way to develop, test, and debug is to setup a local, five-node network using ava-sim. The steps required are:
+The best way to develop, test, and debug is to setup a local five-node network using ava-sim. The steps required are:
 
 1. Run five versions of zcashd, each exposing a different port to talk to a unique zapavm node in the local network.
 2. Run ava-sim with the zapavm plugin as an argument.
@@ -57,3 +57,29 @@ Follow the steps linked here to [run ava-sim with the zapavm plugin](https://git
 ### Step 3: Interact with Local Nodes
 
 See [Interacting with the Chain](https://github.com/zapalabs/ava-sim/blob/master/README.md#interacting-with-the-chain) for instructions on how to interact with the local nodes.
+
+## Running a Validator
+
+To validate the Zapa chain and start earning ZAPA on the fuji network:
+
+1. Run a zcash node
+2. Launch the zapavm plugin
+
+### Step 1: Run zcashd
+
+- [Fetch Zcash Parameters](https://github.com/zapalabs/zcash/blob/master/doc/running.md#1-fetch-params)
+- Optionally, [Build zcashd](https://github.com/zapalabs/zcash/blob/master/doc/running.md#1-build-zcashd-optional). If you don't do this step, a pre-built binary will be used.
+- Follow the steps defined in [Running Zcashd as Part of your Avalanche Validator](https://github.com/zapalabs/zcash/blob/master/doc/running.md#running-zcashd-as-part-of-your-avalanche-validator)
+
+### Step 2: Launch the zapavm plugin
+
+- Ensure you have an `avalanchego` node pointed at the Fuji network.
+- Either follow instructions to [build zapavm](https://github.com/zapalabs/zapavm#building) from source or use a [pre-existing build](https://github.com/zapalabs/zapavm#builds). 
+- Move the plugin binary to your plugins directory, usually found at `build/plugins/` relative to your `avalanchego` program
+- Update your node configuration to whitelist the subnet specified [above](#fuji-deployment-information).
+- Restart `avalanchego`
+- When the node has finished bootstrapping, you should see logs indicating this in the chain log. 
+
+### Step 3: Interact with the chain
+
+- See [Interacting with the Chain](https://github.com/zapalabs/ava-sim/blob/master/README.md#interacting-with-the-chain) for instructions on how to interact with the blockchain. Copy the blockchain ID specified [above](#fuji-deployment-information). In case you're looking for inspiraton, you can call [MineBlock](https://github.com/zapalabs/zapavm#zapavmmineblock) to ask your node to produce a block. You can then call [NodeBlockCounts](https://github.com/zapalabs/zapavm/blob/main/README.md#zapavmnodeblockcounts) to verify that your node has indeed produced a block. If your node has successfully produced a block, you should also have some coinbase rewards. Call [ListSpent](https://github.com/zapalabs/zapavm#example-list-unspent) to see your balances. Then, try sending some funds around...privately, of course. First call [z_getnewaddress](https://github.com/zapalabs/zapavm/blob/main/README.md#example-z_getnewaddress) to get a shielded address. Then call [SubmitTx](https://github.com/zapalabs/zapavm/blob/main/README.md#zapavmsubmittx) in order to send some ZAPA from one of your unspent addresses to this new shielded address. You can then verify the coinas got there by calling [z_getbalance](https://github.com/zapalabs/zapavm/blob/main/README.md#example-z_getbalance). Once you've verified that you can shield funds, try then sending ZAPA to someone else's z-address. Any transactions between z-addresses are 100% private.
