@@ -51,6 +51,6 @@ Follow the steps outlined in [Running zcashd: As Part of a 5 Node Local Setup](h
 
 Follow the steps linked here to [run ava-sim with the zapavm plugin](https://github.com/zapalabs/ava-sim/blob/master/README.md#running).
 
-## Step 3: Interact with Local Nodes
+### Step 3: Interact with Local Nodes
 
 See [Interacting with the Chain](https://github.com/zapalabs/ava-sim/blob/master/README.md#interacting-with-the-chain) for instructions on how to interact with the local nodes.
