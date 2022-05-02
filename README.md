@@ -67,7 +67,7 @@ To validate the Zapa chain and start earning ZAPA on the fuji network:
 
 ### Step 1: Run zcashd
 
-- Check out the following instructions in the [Zcash Repo](https://github.com/zapalabs/zcash/).
+- Follow the below instructions by first checking out the [Zcash Repo](https://github.com/zapalabs/zcash/).
 - [Fetch Zcash Parameters](https://github.com/zapalabs/zcash/blob/master/doc/running.md#1-fetch-params)
 - Optionally, [Build zcashd](https://github.com/zapalabs/zcash/blob/master/doc/running.md#1-build-zcashd-optional). If you don't do this step, a pre-built binary will be used.
 - Follow the steps defined in [Running Zcashd as Part of your Avalanche Validator](https://github.com/zapalabs/zcash/blob/master/doc/running.md#running-zcashd-as-part-of-your-avalanche-validator)
