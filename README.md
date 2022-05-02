@@ -1,11 +1,11 @@
 # Zapa
 
-Zapa stands for Zero Knowledge Anonymous Payments on Avalanche. Zapa is a project for integrating a zcash virtual machine into a custom Avalanche subnet. This repo contains all dependencies needed to develop, debug, deploy, and/or become a validator on zapa.
+Zapa is **Z**ero-Knowledge **A**nonymous **P**ayments on **A**valanche -- a privacy coin built and deployed as an Avalanche Subnet. Zapa integrates the shielded payments technology of [Zcash](https://z.cash/) with the [Avalanche](https://docs.avax.network/) consensus mechanism in order to offer a lightning fast privacy coin fully operated on Proof of Stake.
 
 ## Status
 
 - [x] Locally working end to end with [ava-sim](https://github.com/rkass/ava-sim/tree/master)
-- [ ] Testnet deployed
+- [x] Testnet deployed
 - [ ] Mainnet deployed 
 
 ## Setup
