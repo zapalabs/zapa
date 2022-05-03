@@ -38,6 +38,10 @@ This image depicts the three main components of Zapa and how they work together 
 
 The fourth submodule (not depicted above) is [ava-sim](https://github.com/zapalabs/ava-sim) which is a utility for spinning up a local network for testing.
 
+## Tokenomics
+
+See [Tokenomics](https://github.com/zapalabs/zapa/blob/master/tokenomics.md) for details on how the ZAPA token works, incentives, fees, and reward structure.
+
 ## Local Setup
 
 The best way to develop, test, and debug is to setup a local five-node network using ava-sim. The steps required are:
