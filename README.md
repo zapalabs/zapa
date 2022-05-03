@@ -48,7 +48,7 @@ The best way to develop, test, and debug is to setup a local five-node network u
 
 ### Step 1: Running zcashd
 
-Follow the steps outlined in [Running zcashd: As Part of a 5 Node Local Setup](https://github.com/zapalabs/zcash/blob/master/doc/running.md#running-zcashd-as-part-of-a-5-node-local-setup).
+Follow the steps outlined in [Running zcashd: A 5 Node Local Setup](https://github.com/zapalabs/zcash/blob/master/doc/running.md#running-zcashd-a-5-node-local-setup).
 
 ### Step 2: Running ava-sim with zapavm plugin
 
@@ -63,7 +63,7 @@ See [Interacting with the Chain](https://github.com/zapalabs/ava-sim/blob/master
 To validate the Zapa chain and start earning ZAPA on the fuji network:
 
 1. Run a zcash node
-2. Launch the zapavm plugin
+2. Launch the zapavm plugin ontop of an existing avalanchego fuji deployment.
 
 ### Step 1: Run zcashd
 
@@ -73,7 +73,7 @@ To validate the Zapa chain and start earning ZAPA on the fuji network:
 
 ### Step 2: Launch the zapavm plugin
 
-- Ensure you have an `avalanchego` node pointed at the Fuji network.
+- Ensure you have an `avalanchego` node pointed at the Fuji network. See [Avalanche Docs](https://docs.avax.network/build/tutorials/nodes-and-staking/set-up-node-with-installer/)
 - Either follow instructions to [build zapavm](https://github.com/zapalabs/zapavm#building) from source or use a [pre-existing build](https://github.com/zapalabs/zapavm#builds). 
 - Move the plugin binary to your plugins directory, usually found at `build/plugins/` relative to your `avalanchego` program
 - Update your node configuration to whitelist the subnet specified [above](#fuji-deployment-information).
@@ -85,9 +85,9 @@ To validate the Zapa chain and start earning ZAPA on the fuji network:
 - See [Interacting with the Chain](https://github.com/zapalabs/ava-sim/blob/master/README.md#interacting-with-the-chain) for instructions on how to interact with the blockchain. 
 - Copy the blockchain ID specified [above](#fuji-deployment-information). 
 
-#### Inspiration
+#### Inspiration for Interacting with the Chain
 
-In case you're looking for inspiraton:
+In case you're looking for inspiraton, here's a sequence of calls you can make to earn and transact ZAPA:
 1. Call [MineBlock](https://github.com/zapalabs/zapavm#zapavmmineblock) to ask your node to produce a block. 
 2. Call [NodeBlockCounts](https://github.com/zapalabs/zapavm/blob/main/README.md#zapavmnodeblockcounts) to verify that your node has indeed produced a block. If your node has successfully produced a block, you should also have some coinbase rewards. If not, return to step 1. Sometimes this takes a few tries. 
 3. Call [ListSpent](https://github.com/zapalabs/zapavm#example-list-unspent) to see your balances. 
