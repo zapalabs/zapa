@@ -76,7 +76,7 @@ All of these steps require checking out the [zcash](https://github.com/zapalabs/
 ### Step 2: Launch the zapavm plugin
 
 - Ensure you have an `avalanchego` node pointed at the Fuji network. See [Avalanche Docs](https://docs.avax.network/build/tutorials/nodes-and-staking/set-up-node-with-installer/)
-- Either follow instructions to [build zapavm](./zapavm#building) from source or use a [pre-existing build](https://github.com/zapalabs/zapavm#builds). 
+- Either follow instructions to [build zapavm](https://github.com/zapalabs/zapavm#building) from source or use a [pre-existing build](https://github.com/zapalabs/zapavm#builds). 
 - Move the plugin binary to your plugins directory, usually found at `build/plugins/` relative to your `avalanchego` program
 - Update your node configuration to whitelist the subnet specified [above](#fuji-deployment-information).
 - Restart `avalanchego`
