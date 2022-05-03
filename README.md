@@ -8,7 +8,7 @@ Zapa is **Z**ero-Knowledge **A**nonymous **P**ayments on **A**valanche -- a priv
 - [x] Testnet deployed
 - [ ] Mainnet deployed 
 
-## Fuji Deployment Information
+## Fuji Testnet Deployment Information
 
 Subnet ID: `2ma1j6rSYPykvTDk6JeHKGgXQzqtWbwrsEzUethnTf8k7DMSEb`
 
@@ -48,7 +48,7 @@ The best way to develop, test, and debug is to setup a local five-node network u
 
 ### Step 1: Running zcashd
 
-Follow the steps outlined in [Running zcashd: A 5 Node Local Setup](https://github.com/zapalabs/zcash/blob/master/doc/running.md#running-zcashd-a-5-node-local-setup).
+Checking out the [zcash](https://github.com/zapalabs/zcash) submodule and follow the steps outlined in [Running zcashd: A 5 Node Local Setup](https://github.com/zapalabs/zcash/blob/master/doc/running.md#running-zcashd-a-5-node-local-setup).
 
 ### Step 2: Running ava-sim with zapavm plugin
 
@@ -67,7 +67,7 @@ To validate the Zapa chain and start earning ZAPA on the fuji network:
 
 ### Step 1: Run zcashd
 
-All of these steps require checking out the [zcash](./zcash) submodule and taking action to build or run resources in that project.
+All of these steps require checking out the [zcash](https://github.com/zapalabs/zcash) submodule and taking action to build or run resources in that project.
 
 - [Fetch Zcash Parameters](https://github.com/zapalabs/zcash/blob/master/doc/running.md#1-fetch-params)
 - Optionally, [Build zcashd](https://github.com/zapalabs/zcash/blob/master/doc/running.md#1-build-zcashd-optional). If you don't do this step, a pre-built binary will be used.
