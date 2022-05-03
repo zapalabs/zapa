@@ -85,9 +85,9 @@ To validate the Zapa chain and start earning ZAPA on the fuji network:
 - See [Interacting with the Chain](https://github.com/zapalabs/ava-sim/blob/master/README.md#interacting-with-the-chain) for instructions on how to interact with the blockchain. 
 - Copy the blockchain ID specified [above](#fuji-deployment-information). 
 
-#### Inspiration
+#### Inspiration for Interacting with the Chain
 
-In case you're looking for inspiraton:
+In case you're looking for inspiraton, here's a sequence of calls you can make to earn and transact ZAPA:
 1. Call [MineBlock](https://github.com/zapalabs/zapavm#zapavmmineblock) to ask your node to produce a block. 
 2. Call [NodeBlockCounts](https://github.com/zapalabs/zapavm/blob/main/README.md#zapavmnodeblockcounts) to verify that your node has indeed produced a block. If your node has successfully produced a block, you should also have some coinbase rewards. If not, return to step 1. Sometimes this takes a few tries. 
 3. Call [ListSpent](https://github.com/zapalabs/zapavm#example-list-unspent) to see your balances. 
