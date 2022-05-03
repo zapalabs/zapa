@@ -48,7 +48,7 @@ The best way to develop, test, and debug is to setup a local five-node network u
 
 ### Step 1: Running zcashd
 
-Follow the steps outlined in [Running zcashd: As Part of a 5 Node Local Setup](https://github.com/zapalabs/zcash/blob/master/doc/running.md#running-zcashd-as-part-of-a-5-node-local-setup).
+Follow the steps outlined in [Running zcashd: A 5 Node Local Setup](https://github.com/zapalabs/zcash/blob/master/doc/running.md#running-zcashd-a-5-node-local-setup).
 
 ### Step 2: Running ava-sim with zapavm plugin
 
