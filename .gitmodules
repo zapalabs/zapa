@@ -1,12 +1,15 @@
 [submodule "ava-sim"]
 	path = ava-sim
 	url = git@github.com:zapalabs/ava-sim.git
+	branch = master
 [submodule "zcash"]
 	path = zcash
 	url = git@github.com:zapalabs/zcash.git
+	branch = master
 [submodule "avalanchego"]
 	path = avalanchego
 	url = git@github.com:ava-labs/avalanchego.git
 [submodule "zapavm"]
 	path = zapavm
 	url = git@github.com:zapalabs/zapavm.git
+	branch = main
