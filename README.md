@@ -28,7 +28,7 @@ Throughout this project there are optional directives for debugging in VS Code. 
 
 ## Project Overview
 
-![Zapa Diagram](https://github.com/rkass/zapa/blob/master/ZapaDiagram.png)
+![Zapa Diagram](./ZapaDiagram.png)
 
 This image depicts the three main components of Zapa and how they work together to facilitate an anonymous transaction on the blockchain. Each of those three components are also submodules of this repository:
 
