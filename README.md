@@ -28,7 +28,7 @@ Throughout this project there are optional directives for debugging in VS Code. 
 
 ## Project Overview
 
-![Zapa Diagram](https://github.com/rkass/zapa/blob/master/ZapaDiagram.png)
+![Zapa Diagram](./ZapaDiagram.png)
 
 This image depicts the three main components of Zapa and how they work together to facilitate an anonymous transaction on the blockchain. Each of those three components are also submodules of this repository:
 
@@ -67,6 +67,8 @@ To validate the Zapa chain and start earning ZAPA on the fuji network:
 
 ### Step 1: Run zcashd
 
+All of these steps require checking out the [zcash](./zcash) submodule and taking action to build or run resources in that project.
+
 - [Fetch Zcash Parameters](https://github.com/zapalabs/zcash/blob/master/doc/running.md#1-fetch-params)
 - Optionally, [Build zcashd](https://github.com/zapalabs/zcash/blob/master/doc/running.md#1-build-zcashd-optional). If you don't do this step, a pre-built binary will be used.
 - Follow the steps defined in [Running Zcashd as Part of your Avalanche Validator](https://github.com/zapalabs/zcash/blob/master/doc/running.md#running-zcashd-as-part-of-your-avalanche-validator)
@@ -74,7 +76,7 @@ To validate the Zapa chain and start earning ZAPA on the fuji network:
 ### Step 2: Launch the zapavm plugin
 
 - Ensure you have an `avalanchego` node pointed at the Fuji network. See [Avalanche Docs](https://docs.avax.network/build/tutorials/nodes-and-staking/set-up-node-with-installer/)
-- Either follow instructions to [build zapavm](https://github.com/zapalabs/zapavm#building) from source or use a [pre-existing build](https://github.com/zapalabs/zapavm#builds). 
+- Either follow instructions to [build zapavm](./zapavm#building) from source or use a [pre-existing build](https://github.com/zapalabs/zapavm#builds). 
 - Move the plugin binary to your plugins directory, usually found at `build/plugins/` relative to your `avalanchego` program
 - Update your node configuration to whitelist the subnet specified [above](#fuji-deployment-information).
 - Restart `avalanchego`
