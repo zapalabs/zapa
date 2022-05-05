@@ -8,7 +8,7 @@ Zapa is **Z**ero-Knowledge **A**nonymous **P**ayments on **A**valanche -- a priv
 - [x] Testnet deployed
 - [ ] Mainnet deployed 
 
-## Fuji Deployment Information
+## Fuji Testnet Deployment Information
 
 Subnet ID: `2ma1j6rSYPykvTDk6JeHKGgXQzqtWbwrsEzUethnTf8k7DMSEb`
 
@@ -38,6 +38,10 @@ This image depicts the three main components of Zapa and how they work together 
 
 The fourth submodule (not depicted above) is [ava-sim](https://github.com/zapalabs/ava-sim) which is a utility for spinning up a local network for testing.
 
+## Tokenomics
+
+See [Tokenomics](https://github.com/zapalabs/zapa/blob/master/tokenomics.md) for details on how the ZAPA token works, incentives, fees, and reward structure.
+
 ## Local Setup
 
 The best way to develop, test, and debug is to setup a local five-node network using ava-sim. The steps required are:
@@ -48,7 +52,7 @@ The best way to develop, test, and debug is to setup a local five-node network u
 
 ### Step 1: Running zcashd
 
-Follow the steps outlined in [Running zcashd: A 5 Node Local Setup](https://github.com/zapalabs/zcash/blob/master/doc/running.md#running-zcashd-a-5-node-local-setup).
+Checking out the [zcash](https://github.com/zapalabs/zcash) submodule and follow the steps outlined in [Running zcashd: A 5 Node Local Setup](https://github.com/zapalabs/zcash/blob/master/doc/running.md#running-zcashd-a-5-node-local-setup).
 
 ### Step 2: Running ava-sim with zapavm plugin
 
@@ -67,7 +71,7 @@ To validate the Zapa chain and start earning ZAPA on the fuji network:
 
 ### Step 1: Run zcashd
 
-All of these steps require checking out the [zcash](./zcash) submodule and taking action to build or run resources in that project.
+All of these steps require checking out the [zcash](https://github.com/zapalabs/zcash) submodule and taking action to build or run resources in that project.
 
 - [Fetch Zcash Parameters](https://github.com/zapalabs/zcash/blob/master/doc/running.md#1-fetch-params)
 - Optionally, [Build zcashd](https://github.com/zapalabs/zcash/blob/master/doc/running.md#1-build-zcashd-optional). If you don't do this step, a pre-built binary will be used.
@@ -76,7 +80,7 @@ All of these steps require checking out the [zcash](./zcash) submodule and takin
 ### Step 2: Launch the zapavm plugin
 
 - Ensure you have an `avalanchego` node pointed at the Fuji network. See [Avalanche Docs](https://docs.avax.network/build/tutorials/nodes-and-staking/set-up-node-with-installer/)
-- Either follow instructions to [build zapavm](./zapavm#building) from source or use a [pre-existing build](https://github.com/zapalabs/zapavm#builds). 
+- Either follow instructions to [build zapavm](https://github.com/zapalabs/zapavm#building) from source or use a [pre-existing build](https://github.com/zapalabs/zapavm#builds). 
 - Move the plugin binary to your plugins directory, usually found at `build/plugins/` relative to your `avalanchego` program
 - Update your node configuration to whitelist the subnet specified [above](#fuji-deployment-information).
 - Restart `avalanchego`
