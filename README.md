@@ -80,9 +80,16 @@ All of these steps require checking out the [zcash](https://github.com/zapalabs/
 ### Step 2: Launch the zapavm plugin
 
 - Ensure you have an `avalanchego` node pointed at the Fuji network. See [Avalanche Docs](https://docs.avax.network/build/tutorials/nodes-and-staking/set-up-node-with-installer/)
-- Either follow instructions to [build zapavm](https://github.com/zapalabs/zapavm#building) from source or use a [pre-existing build](https://github.com/zapalabs/zapavm#builds). 
-- Move the plugin binary to your plugins directory, usually found at `build/plugins/` relative to your `avalanchego` program
+- Either follow instructions to [build zapavm](https://github.com/zapalabs/zapavm#building) from source or use a [pre-existing build](https://github.com/zapalabs/zapavm#builds). If using a pre-existing build, no action is required on this step.
+- Move the plugin binary to your plugins directory, usually found at `build/plugins/` relative to your `avalanchego` program. For example, if you're running your node on ubuntu, the command is likely (for OSX just replace `zapavm-ubuntu` with `zapavm-osx`:
+```
+cp zapavm/builds/zapavm-ubuntu ~/avalanche-node/plugins/zapavm
+```
 - Update your node configuration to whitelist the subnet specified [above](#fuji-deployment-information).
+- Alias the vm. Create a vm/aliases.json configuration to alias this VM so that Avalanche knows which vm-id this binary belongs to. Assuming your existing aliases file is empty, you can use this command:
+```
+echo {\"tGas3T58KzdjLHhBDMnH2TvrddhqTji5iZAMZ3RXs2NLpSnhH\":[\"zapavm\"]} > ~/.avalanchego/configs/vms/aliases.json
+```
 - Restart `avalanchego`
 - When the node has finished bootstrapping, you should see logs indicating this in the chain log. 
 
